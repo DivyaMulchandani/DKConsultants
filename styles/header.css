@@ -1,0 +1,335 @@
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('/assets/fonts/Roboto-Light.ttf');
+}
+
+/* General Reset */
+body, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    font-family: 'Roboto-Light', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Logo Section */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 58px;
+}
+
+.logo img {
+    height: 133px; /* Responsive logo size */
+    width: auto;
+    transition: height 0.3s ease;
+}
+
+/* Navigation Styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+    gap: 20px;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.nav-list li {
+    position: relative;
+}
+
+.nav-list a {
+    color: #000;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.nav-list a.active {
+    font-weight: bold;
+}
+
+.nav-list a:hover {
+    color: #333;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 24px;
+    color: #000;
+    transition: color 0.3s ease-in-out;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    min-width: 200px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 20px;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Client Portal Button */
+.client-portal {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 24px;
+    margin-left: 20px;
+    white-space: nowrap;
+    margin-right: 72px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Sliding Menu */
+.sliding-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: #000; /* Black background for the sliding menu */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space for client portal alignment */
+    z-index: 1050;
+    transition: left 0.3s ease; /* Sliding animation */
+    padding: 20px;
+}
+
+.sliding-menu.active {
+    left: 0; /* Slide into view */
+}
+
+.sliding-menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: left; /* Align items to the left */
+}
+
+.sliding-menu ul li {
+    margin: 15px 0;
+    position: relative;
+}
+
+.sliding-menu ul li a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sliding-menu ul li a:hover {
+    color: #d9d9d9;
+}
+
+/* Dropdown in Sliding Menu */
+.sliding-menu .dropdown .dropbtn {
+    font-size: 18px;
+    color: #fff; /* White for visibility */
+    text-align: left;
+    width: 100%;
+}
+
+.sliding-menu .dropdown-content {
+    display: none;
+    background-color: #222; /* Slightly lighter black for dropdown */
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 5px 0;
+    position: relative;
+    z-index: 1100;
+}
+
+.sliding-menu .dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+    position: relative; /* Stack dropdown properly */
+}
+
+.sliding-menu .dropdown-content a {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #222;
+    text-align: left;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sliding-menu .dropdown-content a:hover {
+    background-color: #444;
+    color: #f0f0f0;
+}
+
+/* Align Client Portal Button in Sliding Menu */
+.sliding-menu .client-portal {
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 18px;
+    text-align: center;
+    margin-top: auto;
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sliding-menu .client-portal:hover {
+    background-color: #e6e6e6;
+    color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .nav-list a {
+        font-size: 18px;
+    }
+
+    .dropdown-content a {
+        font-size: 16px;
+    }
+
+    .client-portal {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    .logo img {
+        height: 70px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        flex-grow: 1;
+    }
+
+    .nav-list {
+        gap: 20px;
+    }
+
+    .dropdown-content {
+        min-width: 180px;
+    }
+
+    .client-portal {
+        font-size: 16px;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo img {
+        height: 45px;
+    }
+
+    .nav-list a {
+        font-size: 16px;
+    }
+
+    .client-portal {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        height: 40px;
+    }
+
+    .nav-list a {
+        font-size: 14px;
+    }
+
+    .client-portal {
+        font-size: 14px;
+    }
+}
