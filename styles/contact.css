@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "Roboto-Light";
+  src: url("/assets/fonts/Roboto-Light.ttf");
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto-Light;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.contact-header {
+  position: relative;
+  text-align: center;
+  color: white;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.contact-header img {
+  width: 90%;
+  height: auto;
+}
+
+/* Content Section (for non-footer usage) */
+.content-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Spacing between boxes */
+  width: 100%;
+  max-width: 1700px; /* Maximum width of the content section */
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Footer Box */
+.footer-box {
+  width: 458px;
+  height: 358px;
+  border-radius: 0px 30px 30px 30px;
+  border: 2px solid #000;
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Allows the title to be positioned relative to the box */
+}
+
+/* Title Style for Each Box */
+.box-title {
+  position: absolute;
+  top: -39px; /* Moves the title above the box */
+  left: -2px; /* Adjusts the title to be on the left */
+  width: 154px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 20px 20px 0px 0px;
+  font-weight: bold;
+}
+
+/* Content inside the box */
+.box-content {
+  text-align: center;
+  color: #000;
+}
+
+/* Social Media Icons */
+.social-icons img {
+  margin: 0 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-box {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
