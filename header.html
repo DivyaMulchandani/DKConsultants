@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website Header</title>
+    <link rel="stylesheet" href="/styles/header.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="/assets/images/logo.svg" alt="Logo">
+        </div>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li class="dropdown">
+                    <a href="#news" class="dropbtn">News &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="#direct-tax">Direct Tax</a>
+                        <a href="#indirect-tax">Indirect Tax</a>
+                        <a href="#finance">Finance</a>
+                        <a href="#all-news">All</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#blogs" class="dropbtn">Blogs &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="#gst">GST</a>
+                        <a href="#income-tax">Income Tax</a>
+                        <a href="#finance-policy">Finance Policy</a>
+                        <a href="#all-blogs">All</a>
+                    </div>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#client-portal" class="client-portal">Client Portal</a>
+        </nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="sliding-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li class="dropdown">
+                    <a href="#news" class="dropbtn">News &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="#direct-tax">Direct Tax</a>
+                        <a href="#indirect-tax">Indirect Tax</a>
+                        <a href="#finance">Finance</a>
+                        <a href="#all-news">All</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#blogs" class="dropbtn">Blogs &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="#gst">GST</a>
+                        <a href="#income-tax">Income Tax</a>
+                        <a href="#finance-policy">Finance Policy</a>
+                        <a href="#all-blogs">All</a>
+                    </div>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#client-portal" class="client-portal">Client Portal</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+const slidingMenu = document.querySelector('.sliding-menu');
+
+hamburger.addEventListener('click', () => {
+    slidingMenu.classList.toggle('active');
+    if (slidingMenu.classList.contains('active')) {
+        // Populate sliding menu dynamically to include dropdowns
+        slidingMenu.innerHTML = `
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li class="dropdown">
+                    <a href="#news" class="special">News &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="#direct-tax">Direct Tax</a>
+                        <a href="#indirect-tax">Indirect Tax</a>
+                        <a href="#finance">Finance</a>
+                        <a href="#all-news">All</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#blogs" class="special">Blogs &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="#gst">GST</a>
+                        <a href="#income-tax">Income Tax</a>
+                        <a href="#finance-policy">Finance Policy</a>
+                        <a href="#all-blogs">All</a>
+                    </div>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#client-portal" class="client-portal">Client Portal</a></li>
+            </ul>
+        `;
+    }
+});
+
+    </script>
+</body>
+</html>

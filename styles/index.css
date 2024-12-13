@@ -1,0 +1,68 @@
+/* Hero Section */
+.hero {
+    background: url('/assets/images/hero.svg') no-repeat center center; /* Image centered */
+    background-size: cover; /* Ensures image covers the section proportionally */
+    height: 80vh; /* Adjust the height based on your preference */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 50px 100px 71px 71px; /* Original margins */
+    width: 100%; /* Set to 100% for responsiveness */
+    max-width: 1777px; /* Ensure it doesn’t exceed the specified width */
+    border: 1px solid #000000;
+    border-radius: 30px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding and border in width calculations */
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .hero {
+        margin: 40px 50px; /* Adjust margins for smaller screens */
+        height: 70vh; /* Adjust height */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        margin: 30px 20px; /* Reduce margin for smaller devices */
+        height: 60vh; /* Adjust height */
+        max-width: 100%; /* Ensure it scales properly */
+    }
+
+    .hero h1 {
+        font-size: 36px; /* Reduce font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        margin: 20px 10px; /* Further reduce margin for mobile */
+        height: 50vh; /* Further reduce height */
+    }
+
+    .hero h1 {
+        font-size: 28px; /* Adjust font size */
+    }
+}
+
+/* Ensure the hero image is fully responsive */
+.hero-content h1 {
+    font-size: 48px;
+    color: #000;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.hero-content h1 span {
+    font-weight: bold;
+    color: #007BFF; /* Highlighted text color */
+}
+
+/* Media Query for Smaller Devices */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 28px;
+    }
+}
