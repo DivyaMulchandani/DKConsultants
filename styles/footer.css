@@ -1,11 +1,11 @@
 @font-face {
-  font-family: 'Roboto-Light';
-  src: url('/assets/fonts/Roboto-Light.ttf');
+  font-family: "Roboto-Light";
+  src: url("/assets/fonts/Roboto-Light.ttf");
 }
 
 @font-face {
-  font-family: 'Roboto-Regular';
-  src: url('/assets/fonts/Roboto-Regular.ttf');
+  font-family: "Roboto-Regular";
+  src: url("/assets/fonts/Roboto-Regular.ttf");
 }
 
 body {
@@ -18,8 +18,8 @@ body {
 footer {
   background-color: #000;
   color: #fff;
-  padding: 20px 0;
-  font-family: 'Roboto-Light';
+  padding: 10px 0;
+  font-family: "Roboto-Light";
 }
 
 .footer-container {
@@ -37,7 +37,7 @@ footer {
 
 .footer-section .section-title {
   font-size: 24px;
-  font-family: 'Roboto-Regular';
+  font-family: "Roboto-Regular";
   margin-bottom: 10px;
   color: #fff;
 }
@@ -45,17 +45,21 @@ footer {
 .footer-section ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-section ul li {
   display: flex;
-  align-items: center;
-  margin-bottom: 12px; /* Increased spacing for better readability */
-  font-size: 16px;
+  align-items: center; /* Vertically aligns icon and text */
+  line-height: 1.8; /* Improves overall spacing */
+  margin-bottom: 12px; /* Space between list items */
 }
 
 .footer-section ul li i {
+  display: inline-flex; /* Ensures that the icon aligns horizontally with the text */
+  align-items: center; /* Vertically centers the image within the <i> */
   margin-right: 12px; /* Space between icons and text */
+  justify-content: center;
 }
 
 /* .footer-section li img {
@@ -63,11 +67,26 @@ footer {
   height: 20px;
 } */
 
+.footer-section ul li i img {
+  display: block; /* Keeps the image inline */
+}
+
+.footer-section a,
+.footer-section span {
+  font-size: 16px; /* Consistent font size */
+  color: #fff; /* White text color */
+  text-decoration: none; /* No underline for links */
+  display: inline-block;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
 .footer-section ul li a {
   text-decoration: none;
   color: #fff;
   font-size: 16px; /* Adjusted font size for consistency */
   transition: color 0.3s ease;
+  align-items: center;
 }
 
 .footer-section ul li a:hover {
@@ -78,9 +97,15 @@ footer {
   display: flex;
   margin-top: 10px;
 }
+.logo-img{
+    width: 250px;
+    height: 200px;
+    /* object-fit: cover;
+    object-position: -15px 0; */
+}
 
 .footer-section .social-icons a {
-  margin: 0 8px;
+  margin-right: 8px;
   color: #fff;
   font-size: 18px;
   text-decoration: none;
@@ -96,16 +121,14 @@ footer {
   margin-bottom: 10px;
 }
 
-.footer-section span {
-  line-height: 1.5;
-}
-
 .footer-bottom {
+  font-family: Roboto-Light;
   text-align: center;
-  padding: 10px 0;
+  justify-content: center;
+  padding: 0px 0;
   border-top: 1px solid #444;
-  font-size: 14px;
-  margin-top: 20px;
+  font-size: 24px;
+  /* margin-top: 30px; */
 }
 
 /* Responsive Design */
