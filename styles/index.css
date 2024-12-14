@@ -1,68 +1,53 @@
-/* Hero Section */
-.hero {
-    background: url('/assets/images/hero.svg') no-repeat center center; /* Image centered */
-    background-size: cover; /* Ensures image covers the section proportionally */
-    height: 80vh; /* Adjust the height based on your preference */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.hero-header {
+    position: relative;
     text-align: center;
-    margin: 50px 100px 71px 71px; /* Original margins */
-    width: 100%; /* Set to 100% for responsiveness */
-    max-width: 1777px; /* Ensure it doesn’t exceed the specified width */
-    border: 1px solid #000000;
-    border-radius: 30px; /* Rounded corners */
-    box-sizing: border-box; /* Include padding and border in width calculations */
+    color: white;
+    margin: 5vh 0; /* Top and bottom margins as a percentage of the viewport height */
 }
 
+.hero-header img {
+    width: 90%;
+    height: auto;
+}
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .hero {
-        margin: 40px 50px; /* Adjust margins for smaller screens */
-        height: 70vh; /* Adjust height */
+/* News Ticker Section */
+.news-ticker {
+    position: relative;
+    overflow: hidden; /* Hide overflow to ensure seamless scrolling */
+    white-space: nowrap;
+    background-color: #000000;
+    border: 1px solid #ddd;
+    margin: 5vh 0;
+    padding: 50px 0;
+}
+
+.news-wrapper {
+    display: inline-flex;
+    animation: scroll-horizontal 50s linear infinite; /* Smooth auto-scrolling */
+}
+
+.news-item {
+    flex: 0 0 auto; /* Prevents items from resizing */
+    display: inline-block;
+    padding: 0 20px;
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap; /* Prevents text from wrapping */
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@keyframes scroll-horizontal {
+    from {
+        transform: translateX(100%); /* Start from the right */
+    }
+    to {
+        transform: translateX(-100%); /* End at the left */
     }
 }
 
-@media (max-width: 768px) {
-    .hero {
-        margin: 30px 20px; /* Reduce margin for smaller devices */
-        height: 60vh; /* Adjust height */
-        max-width: 100%; /* Ensure it scales properly */
-    }
-
-    .hero h1 {
-        font-size: 36px; /* Reduce font size */
-    }
+.news-ticker:hover .news-wrapper {
+    animation-play-state: paused; /* Pause scrolling on hover */
 }
 
-@media (max-width: 480px) {
-    .hero {
-        margin: 20px 10px; /* Further reduce margin for mobile */
-        height: 50vh; /* Further reduce height */
-    }
-
-    .hero h1 {
-        font-size: 28px; /* Adjust font size */
-    }
-}
-
-/* Ensure the hero image is fully responsive */
-.hero-content h1 {
-    font-size: 48px;
-    color: #000;
-    font-weight: 400;
-    line-height: 1.4;
-}
-
-.hero-content h1 span {
-    font-weight: bold;
-    color: #007BFF; /* Highlighted text color */
-}
-
-/* Media Query for Smaller Devices */
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 28px;
-    }
-}
