@@ -1,13 +1,31 @@
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('/assets/fonts/Roboto-Light.ttf');
+}
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General body styling */
+body {
+  font-family: 'Roboto-Light', sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Hero Section */
 .hero-header {
-    position: relative;
-    text-align: center;
-    color: white;
-    margin: 5vh 0; /* Top and bottom margins as a percentage of the viewport height */
+  position: relative;
+  text-align: center;
+  color: white;
+  margin: 5vh 0; /* Top and bottom margins as a percentage of the viewport height */
 }
 
 .hero-header img {
-    width: 90%;
-    height: auto;
+  width: 90%;
+  height: auto;
 }
 
 /* News Ticker Section */
@@ -19,14 +37,15 @@
     border: 1px solid #ddd;
     margin: 5vh 0;
     padding: 50px 0;
-}
-
-.news-wrapper {
+  }
+  
+  .news-wrapper {
     display: inline-flex;
     animation: scroll-horizontal 50s linear infinite; /* Smooth auto-scrolling */
-}
-
-.news-item {
+    animation-delay: -50s; /* Start animation in the middle for no delay */
+  }
+  
+  .news-item {
     flex: 0 0 auto; /* Prevents items from resizing */
     display: inline-block;
     padding: 0 20px;
@@ -36,18 +55,400 @@
     white-space: nowrap; /* Prevents text from wrapping */
     text-overflow: ellipsis;
     overflow: hidden;
-}
-
-@keyframes scroll-horizontal {
-    from {
-        transform: translateX(100%); /* Start from the right */
+  }
+  
+  @keyframes scroll-horizontal {
+    0% {
+      transform: translateX(0); /* Start from 0 */
     }
-    to {
-        transform: translateX(-100%); /* End at the left */
+    100% {
+      transform: translateX(-100%); /* End at the left */
     }
-}
-
-.news-ticker:hover .news-wrapper {
+  }
+  
+  .news-ticker:hover .news-wrapper {
     animation-play-state: paused; /* Pause scrolling on hover */
+  }
+  
+
+/* Black Header */
+.black-header {
+  width: 100%;
+  background-color: #000;
+  padding: 20px 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  margin-bottom: 20px;
 }
 
+.header-text {
+  color: #fff;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+/* Tax Advisor Section */
+.tax-advisor-section {
+    width: 90%;
+    max-width: 1800px;
+    margin: 5vh auto; /* Center align with automatic horizontal margin */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px;
+  }
+
+.image-section {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.responsive-image {
+  width: 100%;
+  max-width: 750px;
+  border-radius: 15px;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 18%;
+  left: 76%;
+  background-color: black;
+  color: white;
+  padding: 15px 30px;
+  font-size: 35px;
+  font-weight: 300;
+  border-radius: 30px;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.text-section {
+  flex: 1;
+  padding: 30px;
+  text-align: left;
+}
+
+.text-section h2 {
+  font-weight: 400;
+  font-family: 'Roboto-Regular', sans-serif;
+  font-size: 36px;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.text-section h1 {
+  font-weight: 500;
+  font-size: 64px;
+  font-family: 'Roboto-Medium', sans-serif;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+.text-section p {
+  font-weight: 300;
+  font-family: 'Roboto-Light', sans-serif;
+  font-size: 32px;
+  line-height: 2.5rem;
+  color: #000;
+}
+
+/* Services Section */
+.services-section {
+  width: 85%;
+  max-width: 1800px;
+  text-align: center;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.section-subtitle {
+  font-size: 36px;
+  font-family: 'Roboto-Regular', sans-serif;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.section-title {
+  font-size: 64px;
+  font-weight: 500;
+  margin-bottom: 35px;
+  font-family: 'Roboto-Medium', sans-serif;
+  color: black;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Default 3 cards per row */
+  gap: 30px; /* Adjust gap between cards */
+}
+
+.service-card {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 600px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Align content at the bottom */
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-content {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 30px;
+  text-align: center;
+  height: 175px;
+  width: 80%;
+  max-width: 350px;
+  margin-bottom: 50px; /* Adjusted to shift content lower */
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.service-description {
+  font-size: 1rem;
+  margin-bottom: 15px; /* Space above the arrow icon */
+}
+
+/* Circular Arrow Icon */
+.service-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid black;
+  border-radius: 50%;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.service-icon:hover {
+  background-color: black;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Responsive Design Enhancements */
+/* Responsive Design Enhancements */
+@media screen and (max-width: 1200px) {
+  
+    .tax-advisor-section {
+      flex-direction: column; /* Stack items vertically */
+      text-align: center; /* Center align content */
+      padding: 15px;
+      gap: 20px; /* Add spacing between stacked items */
+    }
+  
+    .responsive-image {
+      max-width: 90%; /* Ensure image fits the container */
+      margin: 0 auto; /* Center the image */
+    }
+  
+    .overlay {
+      top: 10%; /* Position overlay lower for smaller screens */
+      left: 50%; /* Center the overlay */
+      transform: translateX(-50%);
+      font-size: 28px;
+      padding: 10px 20px;
+      width: 80%;
+      max-width: 400px;
+    }
+  
+    .text-section {
+      padding: 20px; /* Reduce padding for smaller screens */
+      text-align: center;
+    }
+  
+    .text-section h1 {
+      font-size: 48px; /* Reduced size for smaller screens */
+    }
+  
+    .text-section h2 {
+      font-size: 32px; /* Adjusted size for readability */
+    }
+  
+    .text-section p {
+      font-size: 20px;
+      line-height: 1.8rem;
+    }
+  
+    .services-section {
+      padding: 15px; /* Reduce padding for smaller screens */
+    }
+  
+    .section-title {
+      font-size: 48px; /* Adjust header size */
+      margin-bottom: 20px;
+    }
+  
+    .section-subtitle {
+      font-size: 24px; /* Adjust subtitle size */
+    }
+  
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr); /* Display 2 cards per row */
+      gap: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+  
+    .news-ticker {
+      padding: 20px 0; /* Reduce padding for small screens */
+    }
+  
+    .overlay {
+      font-size: 24px; /* Smaller font for overlay */
+      padding: 8px 12px;
+    }
+  
+    .text-section h1 {
+      font-size: 40px; /* Smaller header */
+    }
+  
+    .text-section h2 {
+      font-size: 24px;
+    }
+  
+    .text-section p {
+      font-size: 18px;
+      line-height: 1.6rem;
+    }
+  
+    .services-section {
+      text-align: center; /* Center align services section */
+    }
+  
+    .services-grid {
+      grid-template-columns: 1fr; /* Single column layout for small tablets */
+      gap: 15px;
+    }
+  
+    .service-card {
+      height: 300px; /* Adjust card height */
+    }
+  
+    .service-content {
+      width: 90%;
+      margin-bottom: 30px; /* Space for better alignment */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .black-header {
+      padding: 10px;
+    }
+  
+    .header-text {
+      font-size: 24px; /* Smaller header text */
+    }
+  
+    .news-item {
+      font-size: 18px; /* Smaller font for news ticker */
+    }
+  
+    .tax-advisor-section {
+      flex-direction: column; /* Stack content */
+      gap: 20px;
+      padding: 10px; /* Reduce padding */
+    }
+  
+    .responsive-image {
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto; /* Center the image */
+    }
+  
+    .overlay {
+      font-size: 20px;
+      padding: 8px 10px;
+      top: 10%; /* Adjust overlay position */
+      width: 90%;
+      max-width: 300px;
+    }
+  
+    .text-section h1 {
+      font-size: 32px; /* Smaller header */
+    }
+  
+    .text-section h2 {
+      font-size: 20px;
+    }
+  
+    .text-section p {
+      font-size: 16px;
+      line-height: 1.5rem;
+    }
+  
+    .services-section {
+      padding: 10px;
+    }
+  
+    .section-title {
+      font-size: 36px; /* Smaller header for services */
+    }
+  
+    .section-subtitle {
+      font-size: 20px;
+    }
+  
+    .services-grid {
+      grid-template-columns: 1fr; /* Single column for mobile */
+      gap: 10px;
+    }
+  
+    .service-card {
+      height: 250px; /* Reduce card height */
+    }
+  
+    .service-content {
+      padding: 10px;
+      width: 95%;
+      font-size: 0.9rem; /* Smaller font */
+    }
+  
+    .service-title {
+      font-size: 1.2rem;
+    }
+  
+    .service-description {
+      font-size: 0.8rem;
+    }
+  
+    .service-icon {
+      width: 35px;
+      height: 35px;
+      font-size: 1rem;
+    }
+  }
+  
+  
