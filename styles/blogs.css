@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto-Regular", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -26,6 +26,12 @@ body {
 @font-face {
     font-family: 'Roboto-Bold';
     src: url('assets/fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('assets/fonts/Roboto-Light.ttf') format('truetype');
     font-weight: bold;
 }
 
@@ -131,75 +137,124 @@ section hr {
 .blogs-insight {
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
 }
 
 .container {
     display: grid;
     grid-template-areas:
         "left right-top"
-        "left right-middle"
         "left right-bottom";
     grid-template-columns: 1fr 2fr;
-    gap: 20px;
-    max-width: 1200px;
-    width: 90%;
+    gap: 26px;
+    margin-left: 90px;
+    margin-right: 90px;
 }
 
 .card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border-radius: 30px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    margin: 20px;
+    margin: 10px;
+    height: 350px;
+    width: 500px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    /* Smooth transition */
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    /* Slight lift and scale */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Enhanced shadow */
+    cursor: pointer;
+}
+
+.card:hover .action-arrow {
+    color: #007BFF;
+    /* Change arrow color on hover */
+    transition: color 0.3s ease;
 }
 
 .left {
     grid-area: left;
     background-color: #000;
     color: #fff;
-    padding: 20px;
-    border-radius: 8px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+.left:hover {
+    transform: translateY(-10px) scale(1.03); /* Slight lift and scale */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    cursor: pointer;
+}
+
+.left:hover .action-arrow {
+    color: #007BFF; /* Change arrow color on hover */
+    transition: color 0.3s ease;
+}
+
+
+.left p {
+    font-size: 20px;
+    font-family: "Roboto-Light", sans-serif;
+    margin-top: 50px;
+}
+
+
+.image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    margin-top: 40px;
+
+}
+
+.left img {
+    height: 350px;
+    width: 500px;
+    border-radius: 30px;
+}
+
+.container h1 {
+    font-size: 40px;
+    font-family: "Roboto-Bold", sans-serif;
+    margin: 0;
+    margin-top: 10px;
 }
 
 .right-top {
-    grid-area: right-top;
-    padding: 20px;
-    border-radius: 8px;
+    font-size: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
 
 .right-bottom {
-    padding: 20px;
     border-radius: 8px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
 
 .action-arrow {
     margin-top: auto;
@@ -209,15 +264,7 @@ p {
     cursor: pointer;
 }
 
-.image-placeholder {
-    background-color: #e0e0e0;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    margin-bottom: 20px;
-}
+
 
 @media (max-width: 768px) {
     .container {
@@ -231,13 +278,12 @@ p {
 }
 
 
-.custom-container {
+/* .custom-container {
     position: relative;
     background: white;
     border: 1px solid black;
     border-radius: 16px;
     padding: 30px;
-    width: 400px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: 'Roboto', sans-serif;
 }
@@ -252,16 +298,4 @@ p {
     font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 20px;
-}
-
-.ellipse {
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 100px;
-    height: 100px;
-}
-
-.ellipse svg {
-    display: block;
-}
+} */
