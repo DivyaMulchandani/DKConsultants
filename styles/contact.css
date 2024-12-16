@@ -3,6 +3,11 @@
   src: url("/assets/fonts/Roboto-Light.ttf");
 }
 
+@font-face {
+  font-family: "Roboto-Medium";
+  src: url("/assets/fonts/Roboto-Medium.ttf");
+}
+
 /* General Reset */
 * {
   margin: 0;
@@ -14,79 +19,88 @@ body {
   font-family: Roboto-Light;
   background-color: #f9f9f9;
   display: flex;
-  flex-direction: column; /* Ensures vertical stacking */
-  justify-content: flex-start; /* Aligns content to the top */
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   height: 100vh;
   width: 100vw;
-  overflow-y: auto; /* Allows scrolling for smaller screens */
+  overflow-y: auto;
 }
 
 .contact-header {
   position: relative;
   text-align: center;
   color: white;
-  margin: 50px 0; /* Reduced margin for better spacing */
-  display: block;
+  margin: 30px 0; /* Reduced top and bottom margin */
 }
 
 .contact-header img {
   width: 90%;
-  max-width: 1777px; /* Ensures image is responsive */
-  height: auto; /* Maintains aspect ratio */
+  max-width: 1777px;
+  height: auto;
 }
 
-/* Content Section (for non-footer usage) */
+/* Content Section */
 .content-section {
   display: flex;
-  flex-wrap: wrap; /* Allows wrapping for responsiveness */
-  justify-content: space-around;
-  gap: 20px; /* Increased spacing between boxes */
+  flex-wrap: wrap;
+  justify-content: center; /* Center-align content */
+  gap: 20px;
   width: 93%;
-  max-width: 1700px; /* Maximum width of the content section */
-  margin: 0 auto 50px auto; /* Centered with spacing below */
-  margin-top: 100px;
-  margin-bottom: 100px;
+  max-width: 1700px;
+  margin: 50px auto; /* Reduced vertical spacing */
 }
 
 /* Footer Box */
 .footer-box {
-  flex: 1 1 300px; /* Responsive box sizing */
-  max-width: 458px; /* Maximum width for larger screens */
-  height: 358px;
+  flex: 1 1 300px;
+  max-width: 458px;
+  min-height: 300px; /* Adjusted height for consistency */
   border-radius: 0px 30px 30px 30px;
   border: 2px solid #000;
   background: #fff;
-  padding: 20px; /* Added padding for better content spacing */
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative; /* Allows the title to be positioned relative to the box */
+  position: relative;
 }
 
 /* Title Style for Each Box */
 .box-title {
   position: absolute;
-  top: -39px; /* Moves the title above the box */
-  left: -2px; /* Adjusts the title to be on the left */
-  width: 154px;
+  top: -35px; /* Adjusted to reduce gap */
+  left: -2px; /* Aligns to the left corner */
+  width: 150px;
   background: #000;
   color: #fff;
   text-align: center;
-  padding: 10px 20px;
+  padding: 8px 15px;
   border-radius: 20px 20px 0px 0px;
   font-weight: bold;
+  font-size: 1em; /* Adjusted font size */
 }
 
 /* Content inside the box */
 .box-content {
   text-align: center;
   color: #000;
+  font-size: 1em; /* Ensures readability */
+  line-height: 1.4; /* Improved spacing */
+  margin: 0;
+}
+h2{
+  /* font-weight: bold; */
+  font-family: Roboto-Medium;
+}
+/* Social Media Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-/* Social Media Icons */
 .social-icons img {
   margin: 0 10px;
   width: 30px;
@@ -96,140 +110,257 @@ body {
 }
 
 .social-icons img:hover {
-  transform: scale(1.1); /* Hover effect */
+  transform: scale(1.1);
 }
 
-.social-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .contact-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 90%;
   max-width: 1700px;
+  flex-wrap: wrap;
 }
 
 .contact-form {
-  width: 50%;
-  padding: 30px;
+  width: 48%;
+  padding: 20px; /* Reduced padding */
   border-radius: 8px;
   font-family: Roboto-Light;
 }
 
-input::placeholder{
+input::placeholder,
+textarea::placeholder {
   color: #000;
+  font-size: 20px;
+  
+  line-height: 50px;
   font-family: Roboto-Light;
 }
-textarea::placeholder{
-  color: #000;
-  font-family: Roboto-Light;
-}
-form .form-group input {
-  border: 2px solid black; /* Black border */
-  border-radius: 30px;     /* Rounded corners */
-  padding: 10px;           /* Add padding for better appearance */
-  width: 100%;             /* Optional: Make the inputs take full width */
-  box-sizing: border-box;  /* Ensure padding doesn't affect width */
-  height: 50px;
-}
-form .form-group textarea{
-  border: 2px solid black; /* Black border */
-  border-radius: 30px;     /* Rounded corners */
-  padding: 10px;           /* Add padding for better appearance */
-  width: 100%;             /* Optional: Make the inputs take full width */
-  box-sizing: border-box;  /* Ensure padding doesn't affect width */
-}
-form button {
-  border-radius: 30px;     /* Optional: Add rounded corners to the button */
 
+.form-group {
+  position: relative;
+  width: 100%;
+}
+
+form .form-group input {
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 70px;
+  opacity: 0.6;
+}
+
+form .form-group input:focus {
+border-color: black;
+outline: none;
+opacity: 0.6;
+}
+
+.symbol {
+  margin-left: 8px;
+  position: absolute;
+  top: 50%;
+  left: 90%; /* Position the icon inside the input */
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+}
+
+.nsymbol {
+  margin-left: 8px;
+  position: absolute;
+  top: 50%;
+  left: 91%; /* Position the icon inside the input */
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+}
+
+.tasymbol{
+  margin-left: 8px;
+  position: absolute;
+  top: 30%;
+  left: 90%; /* Position the icon inside the input */
+  transform: translateY(-50%);
+  display: flex;
+  opacity: 0.6;
+}
+
+form .form-group textarea {
+  border: 2px solid black;
+  border-radius: 30px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 120px;
+  opacity: 0.6;
+}
+
+form .form-group textarea:focus {
+  border-color: #000;
+  outline: none;
+  }
+
+form button {
+  border-radius: 30px;
   padding: 10px 20px;
-  background-color: black; /* Button background color */
-  color: white;            /* Button text color */
-  border: none;            /* Remove button border */
-  cursor: pointer;         /* Change cursor to pointer */
-  width: 25%;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 27%; /* Adjusted button width */
   height: 50px;
   font-size: 1.1em;
 }
 
 form button:hover {
-  background-color: #333;  /* Optional: Darker shade on hover */
+  background-color: #333;
 }
 
-
 .contact-form h2 {
-  font-size: 2em;
+  font-size: 1.8em; /* Adjusted size */
   margin-bottom: 20px;
   text-align: left;
+  font-family: Roboto-Medium;
 }
 
 .form-group {
-  margin-bottom: 20px;
-  border-radius: 30px ;
-}
-
-.form-group label {
-  font-weight: bold;
-  margin-bottom: 5px;
-  display: block;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 1em;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-top: 5px;
-}
-
-.form-group textarea {
-  height: 120px;
-}
-
-/* button {
-  width: 25%;
-  height: 40%;
-  padding: 10px;
-  background-color: #333;
-  color: white;
-  font-size: 1.1em;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-} */
-
-button:hover {
-  background-color: #555;
+  margin-bottom: 15px; /* Adjusted spacing between fields */
 }
 
 .map-container {
-  width: 45%;
-  height: 500px;
+  width: 48%;
+  height: 500px; /* Reduced map height */
   border-radius: 30px;
   overflow: hidden;
-  border: 2px;
-  border-style: solid;
+  border: 2px solid black;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .contact-header {
-    margin: 30px 0; /* Adjusted spacing for smaller screens */
+@media (max-width: 1024px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
   }
 
+  .contact-form,
+  .map-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .contact-header {
+    margin: 20px 0;
+  }
+
+  .symbol,
+  .nsymbol
+  {
+    left: 84%; /* Adjust icon position for smaller widths */
+  }
+  .tasymbol
+  {
+    left: 80%;
+    height: 45px;
+    width: 45px;
+  }
+}
+
+@media (max-width: 768px) {
   .content-section {
-    flex-direction: column; /* Stacks boxes vertically */
+    flex-direction: column;
     align-items: center;
-    gap: 20px; /* Consistent gap */
+    gap: 20px;
   }
 
   .footer-box {
-    width: 90%; /* Takes most of the screen width */
+    width: 90%;
     margin-bottom: 20px;
+    min-height: 250px; /* Adjust height for mobile view */
+  }
+
+  .contact-form h2 {
+    font-size: 1.5em;
+    font-family: Roboto-Medium;
+  }
+
+  form button {
+    width: 60%;
+  }
+
+  .map-container {
+    height: 300px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 35px 10px 10px; /* Reduce right padding */
+    height: 60px; /* Adjust input height */
+  }
+
+  .symbol,
+  .nsymbol{
+    right: 10px; /* Adjust icon position */
+    width: 20px; /* Smaller icons */
+    height: 20px;
+  }
+  .tasymbol
+  {
+    left: 80%;
+    height: 45px;
+    width: 45px;
   }
 }
+
+@media (max-width: 480px) {
+  .box-title {
+    font-size: 0.9em;
+    padding: 8px 10px;
+  }
+
+  .footer-box {
+    padding: 10px;
+    min-height: 220px; /* Smaller box height for small screens */
+  }
+
+  .box-content {
+    font-size: 0.9em;
+  }
+
+  form button {
+    font-size: 1em;
+    height: 40px;
+    width: 80%;
+  }
+
+  .map-container {
+    height: 250px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 8px 30px 8px 8px; /* Smaller padding */
+    height: 50px;
+  }
+
+  .symbol,
+  .nsymbol{
+    right: 8px;
+    width: 18px;
+    height: 18px;
+  }
+  .tasymbol
+  {
+    left: 80%;
+    height: 45px;
+    width: 45px;
+  }
+}
+
