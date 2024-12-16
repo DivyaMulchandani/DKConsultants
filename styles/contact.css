@@ -267,7 +267,8 @@ form button:hover {
   }
   .tasymbol
   {
-    left: 80%;
+    top: 45%;
+    left: 75%;
     height: 45px;
     width: 45px;
   }
@@ -292,7 +293,7 @@ form button:hover {
   }
 
   form button {
-    width: 60%;
+    width: 40%;
   }
 
   .map-container {
@@ -313,7 +314,7 @@ form button:hover {
   }
   .tasymbol
   {
-    left: 80%;
+    left: 75%;
     height: 45px;
     width: 45px;
   }
@@ -337,7 +338,7 @@ form button:hover {
   form button {
     font-size: 1em;
     height: 40px;
-    width: 80%;
+    width: 35%;
   }
 
   .map-container {
@@ -350,17 +351,77 @@ form button:hover {
     height: 50px;
   }
 
-  .symbol,
-  .nsymbol{
-    right: 8px;
-    width: 18px;
-    height: 18px;
+  .symbol, .nsymbol, .tasymbol {
+    left: 85%; /* Adjust icon position */
+    font-size: 14px;
   }
   .tasymbol
   {
+    top: 45%;
     left: 80%;
     height: 45px;
     width: 45px;
   }
 }
+/* Styles for tablets */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .contact-form {
+    width: 70%; /* Adjusted width for tablets */
+    padding: 15px; /* Slightly reduced padding */
+  }
 
+  form .form-group input,
+  form .form-group textarea {
+    font-size: 18px; /* Adjust font size */
+    height: 60px; /* Slightly reduced height */
+    border-radius: 15px;
+    padding: 10px;
+  }
+
+  .symbol, .nsymbol, .tasymbol {
+    left: 80%; /* Adjust icon position */
+    font-size: 16px;
+  }
+
+  form button {
+    width: 40%; /* Adjusted button width */
+    font-size: 1.1em;
+    height: 50px;
+  }
+
+  .contact-form h2 {
+    font-size: 1.6em;
+    text-align: left; /* Left aligned heading */
+  }
+}
+
+/* Styles for laptops */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .contact-form {
+    width: 50%; /* Slightly smaller width for laptops */
+    padding: 20px; /* Original padding */
+  }
+
+  form .form-group input,
+  form .form-group textarea {
+    font-size: 20px; /* Original font size */
+    height: 70px; /* Original height */
+    border-radius: 20px;
+  }
+
+  .symbol, .nsymbol, .tasymbol {
+    left: 90%; /* Original icon position */
+    font-size: 18px;
+  }
+
+  form button {
+    width: 30%; /* Adjust button width */
+    font-size: 1.1em;
+    height: 50px;
+  }
+
+  .contact-form h2 {
+    font-size: 1.8em; /* Original heading size */
+    margin-bottom: 20px;
+  }
+}
